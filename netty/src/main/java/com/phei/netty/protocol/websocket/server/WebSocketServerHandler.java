@@ -37,6 +37,7 @@ import io.netty.handler.codec.http.websocketx.WebSocketServerHandshaker;
 import io.netty.handler.codec.http.websocketx.WebSocketServerHandshakerFactory;
 import io.netty.util.CharsetUtil;
 
+import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -118,6 +119,7 @@ public class WebSocketServerHandler extends SimpleChannelInboundHandler<Object> 
 		if (logger.isLoggable(Level.FINE)) {
 			logger.fine(String.format("%s received %s", ctx.channel(), request));
 		}
+
 		ctx.channel().write(
 				new TextWebSocketFrame(request
 						+ " , 欢迎使用Netty WebSocket服务，现在时刻："

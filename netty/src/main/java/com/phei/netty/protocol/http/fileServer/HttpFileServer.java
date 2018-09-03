@@ -34,7 +34,7 @@ import io.netty.handler.stream.ChunkedWriteHandler;
  */
 public class HttpFileServer {
 
-	private static final String DEFAULT_URL = "/src/com/phei/netty/";
+	private static final String DEFAULT_URL = "/src/main/java/com/phei/netty/";
 
 	public void run(final int port, final String url) throws Exception {
 		EventLoopGroup bossGroup = new NioEventLoopGroup();
@@ -59,8 +59,8 @@ public class HttpFileServer {
 									new HttpFileServerHandler(url));
 						}
 					});
-			ChannelFuture future = b.bind("192.168.1.102", port).sync();
-			System.out.println("HTTP文件目录服务器启动，网址是 : " + "http://192.168.1.102:"
+			ChannelFuture future = b.bind("192.168.31.100", port).sync();
+			System.out.println("HTTP文件目录服务器启动，网址是 : " + "http://192.168.31.100:"
 					+ port + url);
 			future.channel().closeFuture().sync();
 		} finally {
