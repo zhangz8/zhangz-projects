@@ -10,6 +10,7 @@
 		<module>spring3-ch06</module>
 		<module>practice</module>
 		<module>nio</module>
+		<module>netty</module>
 	</modules>
 
 	<properties>
